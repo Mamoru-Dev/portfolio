@@ -1,0 +1,110 @@
+:root {
+  --bg-color: #f4f3f1;
+  --text-color: #111;
+  --font: 'Helvetica Neue', sans-serif; 
+  --font-size-small: 14px;
+}
+
+
+img { 
+	max-width: 100%;
+	height: auto;
+} /* Делаем так, чтоб изображение не выходило за родителя */
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+	margin: 0;
+	font-size: 100%;
+	font-weight: normal;
+} /* Делаем базовые значения текста для всех заголовков */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth; 
+}
+
+.main-wrapper {
+  background-color: pink;
+  width: 1200px;
+  margin: 0 auto;  
+}
+
+
+
+
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+  padding: 24px 0;
+}
+
+.header__logo, .header__email {
+  z-index: 1; 
+}
+
+.header__logo-text {
+  /* ! Need a var */
+  font-size: 20px; 
+  font-weight: bold;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header__nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  white-space: nowrap;
+}
+
+.header__email-link{
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+}
+
+
+
+
+
+/* Мобильные устройства */
+@media (max-width: 767px) {
+
+}
+
+/* Планшеты */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Небольшие ноутбуки */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Стандартные десктопы */
+@media (min-width: 1200px) {
+
+}
+
