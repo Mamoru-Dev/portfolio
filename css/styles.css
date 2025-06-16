@@ -93,6 +93,52 @@ body {
 
 
 
+/* Бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 2px;
+}
+
+/* Мобильное меню */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: var(--bg-color);
+  border: 1px solid #ccc;
+  padding: var(--indent);
+  flex-direction: column;
+  gap: var(--indent);
+  z-index: 1000;
+}
+
+.mobile-nav__link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size-small);
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Показать при активном бургере */
+.mobile-nav.active {
+  display: flex;
+}
+
 
 
 
@@ -214,23 +260,41 @@ body {
 
 /* Мобильные устройства */
 @media (max-width: 767px) {
-  /* ! В разработке */
   .header__email-link {
     display: none;
   }
 
-  .hero__subheading-indent {
-    padding-left: 640px;
+  .header__nav {
+    display: none; /* скрываем обычную навигацию */
   }
 
+  .burger {
+    display: flex; /* показываем бургер */
+  }
+
+  .hero__subheading-indent {
+    padding-left: 200px;
+  }
+
+
   :root {
-    --font-size-h1: 70px;
-    --font-size-small: 12px;
-    --font-size-big: 38px;
+    --font-size-h1: 30px;
+    --font-size-small: 10px;
+    --font-size-big: 20px;
   }
 
   .hero__photo-img {
-    width: 230px;
+    width: 150px;
+  }
+
+  .skills__card {
+    width: 90px;
+    gap: calc(var(--indent)/2);
+  }
+
+  .skills__card-icon {
+    width: 40px;
+    height: 40px;
   }
 }
 
