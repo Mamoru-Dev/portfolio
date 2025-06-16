@@ -35,9 +35,11 @@ body {
 }
 
 .main-wrapper {
-  background-color: pink;
+  box-sizing: content-box;
+  /* background-color: pink; */
   max-width: 1200px;
   margin: 0 auto;  
+  padding: 0 var(--indent);
 }
 
 
@@ -51,6 +53,7 @@ body {
   align-items: center;
   position: relative; 
   padding: var(--indent) 0;
+  margin-bottom: var(--indent);
 }
 
 .header__logo, .header__email {
@@ -105,7 +108,7 @@ body {
 }
 
 /* .hero__title-shadow {
-  text-shadow: 2px 2px #aaa;
+  text-shadow: 2px 2px #ff00ae;
 } */
 
 .hero__subheading {
@@ -123,7 +126,7 @@ body {
 .hero__about {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--indent);
+  margin-bottom: calc(var(--indent)*3);
 }
 
 .hero__photo-img {
@@ -150,6 +153,55 @@ body {
 
 
 
+/* Skills */
+.skills__title {
+  margin-bottom: var(--indent);
+}
+
+.skills__title-text {
+  font-size: var(--font-size-big);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--indent);
+  justify-content: space-around; 
+}
+
+.skills__card {
+  width: 120px;
+  aspect-ratio: 1 / 1; 
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--indent);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.skills__card:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  transform: translateY(-4px);
+}
+
+.skills__card-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.skills__card-name {
+  font-size: var(--font-size-small);
+  text-align: center;
+}
 
 
 
@@ -176,6 +228,10 @@ body {
     --font-size-small: 12px;
     --font-size-big: 38px;
   }
+
+  .hero__photo-img {
+    width: 230px;
+  }
 }
 
 /* Планшеты */
@@ -193,6 +249,10 @@ body {
     --font-size-small: 12px;
     --font-size-big: 38px;
   }
+
+  .hero__photo-img {
+    width: 230px;
+  }
 }
 
 /* Небольшие ноутбуки */
@@ -205,6 +265,9 @@ body {
     --font-size-small: 13px;
     --font-size-big: 43px;
   }
+  .hero__photo-img {
+    width: 240px;
+  }
 }
 
 /* Стандартные десктопы */
@@ -212,3 +275,24 @@ body {
 
 }
 
+
+
+
+
+
+/* @media (max-width: 767px) {
+  .skills__list {
+    gap: calc(var(--indent) / 2);
+    justify-content: center;
+  }
+
+  .skills__card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .skills__card-icon {
+    width: 32px;
+    height: 32px;
+  }
+} */
